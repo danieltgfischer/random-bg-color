@@ -1,5 +1,5 @@
-import { useEffect } from "react";
-import { SafeAreaView } from "react-native";
+import React, { useEffect } from "react";
+import { StatusBar } from "react-native";
 import FontAwesome from "@expo/vector-icons/FontAwesome";
 import { useFonts } from "expo-font";
 import { Stack } from "expo-router";
@@ -32,9 +32,10 @@ export default function RootLayout() {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
+    <>
+      <StatusBar barStyle="dark-content" />
       <RootLayoutNav />
-    </SafeAreaView>
+    </>
   );
 }
 
