@@ -11,12 +11,12 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 export default function SplashScreen() {
   const [showAnimation, setShowAnimation] = useState(true);
 
-  // useEffect(() => {
-  //   const timeout = setTimeout(() => {
-  //     setShowAnimation(false);
-  //   }, 4500);
-  //   return () => clearTimeout(timeout);
-  // }, []);
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setShowAnimation(false);
+    }, 4500);
+    return () => clearTimeout(timeout);
+  }, []);
 
   const navigateToHome = useCallback(() => {
     router.replace("/home");
