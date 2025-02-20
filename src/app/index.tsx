@@ -11,19 +11,19 @@ const { width: screenWidth, height: screenHeight } = Dimensions.get("window");
 export default function SplashScreen() {
   const [showAnimation, setShowAnimation] = useState(true);
 
-  useEffect(() => {
-    const timeout = setTimeout(() => {
-      setShowAnimation(false);
-    }, 4500);
-    return () => clearTimeout(timeout);
-  }, []);
+  // useEffect(() => {
+  //   const timeout = setTimeout(() => {
+  //     setShowAnimation(false);
+  //   }, 4500);
+  //   return () => clearTimeout(timeout);
+  // }, []);
 
   const navigateToHome = useCallback(() => {
     router.replace("/home");
   }, []);
 
   return (
-    <View className="flex-1 items-center justify-start top-28">
+    <View className="flex-1 items-center justify-start pt-28 bg-white">
       <Animated.Text
         className="text-4xl font-bold relative z-10 "
         entering={FadeIn.duration(1000)}
@@ -35,9 +35,9 @@ export default function SplashScreen() {
         className="text-4xl font-bold  z-10 flex flex-row gap-1"
         entering={FadeIn.duration(1000).delay(1000)}
       >
-        <RandomColoredText text="Random" className="text-4xl font-bold" />
-        <RandomColoredText text="Background" className="text-4xl font-bold" />
-        <RandomColoredText text="Color" className="text-4xl font-bold" />
+        <RandomColoredText text="Random" className="text-3xl font-bold" />
+        <RandomColoredText text="Background" className="text-3xl font-bold" />
+        <RandomColoredText text="Color" className="text-3xl font-bold" />
       </Animated.View>
       {showAnimation && (
         <Animated.View
@@ -54,7 +54,7 @@ export default function SplashScreen() {
             style={{
               width: screenWidth,
               height: screenHeight / 2,
-              backgroundColor: "#eee",
+              backgroundColor: "#fff",
             }}
             source={splashAnimation}
           />
